@@ -74,7 +74,7 @@ const Navbar = () => {
                   onClick={() => setMobileOpen(false)}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <span className="text-primary font-mono text-xs mr-1">0{i + 1}.</span>
+                  
                   {link.label}
                 </a>
               </li>
