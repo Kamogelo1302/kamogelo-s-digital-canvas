@@ -92,7 +92,6 @@ const HeroSection = () => {
               </a>
             </motion.div>
           </div>
-        </div>
       </div>
     </section>
   );
