@@ -2,30 +2,32 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink, Folder } from "lucide-react";
 
+const GITHUB_URL = "https://github.com/Kamogelo1302";
+
 const projects = [
   {
     title: "HR Management System",
     description:
-      "Internal web application for managing employee records and HR processes. Includes employee dashboards, database interactions, and administrative management features.",
+      "Internal HRMS platform for managing employee records, department information, and HR processes. Includes employee dashboards, database interactions, and administrative management features.",
     tech: ["JavaScript", "React", "SQL", "REST APIs"],
   },
   {
     title: "Asset Management System",
     description:
-      "System used to track company devices and employee borrowing requests. Role-based access system for employees and supervisors.",
+      "System to track company devices and manage employee borrowing requests. Role-based access for employees and supervisors with asset lifecycle management (Pending → Approved → Returned).",
     tech: ["JavaScript", "React", "SQL", "Supabase"],
   },
   {
     title: "Task Management Web App",
     description:
-      "Web application that allows users to manage and organize tasks and projects. Users can create, update, delete, and categorize tasks.",
+      "Web application for organizing and tracking personal tasks and projects. Users can create, update, delete, and categorize tasks with project grouping.",
     tech: ["React", "Database Integration"],
   },
   {
     title: "Smart Irrigation System (IoT)",
     description:
-      "IoT-based irrigation system using ESP32 and a soil moisture sensor. Automatically activates a water pump when soil moisture is low. Sends real-time data through WiFi to a cloud database.",
-    tech: ["ESP32", "C/C++", "IoT", "Cloud Database"],
+      "IoT-based smart irrigation system using ESP32 and soil moisture sensor. Automatically activates a water pump when soil moisture is low and sends real-time data via WiFi to a cloud database.",
+    tech: ["ESP32", "Arduino", "IoT", "Supabase"],
   },
 ];
 
@@ -48,12 +50,15 @@ const ProjectsSection = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project, i) => (
-              <motion.div
+              <motion.a
                 key={project.title}
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 group flex flex-col"
+                className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 group flex flex-col cursor-pointer"
               >
                 <div className="flex items-center justify-between mb-4">
                   <Folder size={36} className="text-primary" />
@@ -81,7 +86,7 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </motion.div>
