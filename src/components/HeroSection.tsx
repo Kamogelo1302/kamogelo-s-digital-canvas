@@ -1,28 +1,12 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, MapPin, Download } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.jpg";
 
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center px-6 pt-20">
       <div className="container mx-auto max-w-4xl">
-        <div className="flex flex-col md:flex-row items-center gap-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="shrink-0"
-          >
-            <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-2 border-primary/50 shadow-lg shadow-primary/20">
-              <img
-                src={profilePhoto}
-                alt="Kamogelo Mokoena"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </motion.div>
+        <div>
 
-          <div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -108,7 +92,6 @@ const HeroSection = () => {
               </a>
             </motion.div>
           </div>
-        </div>
       </div>
     </section>
   );
